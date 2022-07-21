@@ -132,9 +132,12 @@ for iTrial = 1:n_trials
                 break;
             end
             %note: need to record the key presses with associated choice 
+            response = KbName(keyCode); % unified key name to record response
     end
-
-     
+   
+   my_drawfixation(myscreen,center_screen,15,15,[0 0.6 0.3]);
+   Screen('Flip', myscreen);  
+   WaitSecs(2)
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % delay 2
