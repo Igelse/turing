@@ -7,8 +7,15 @@ pos1 = xpos(r(1));
 pos2 = xpos(r(2));
 
 
-DrawFormattedText(w, 'Press the left button', 200, 150, [255 255 255]);
-DrawFormattedText(w, 'Press the right button', 880, 150, [255 255 255]);
 DrawFormattedText(w, 'Human', pos1, 'center', [255 255 255]);
 DrawFormattedText(w, 'Robot', pos2, 'center', [255 255 255]);
+
+%% response
+key_set = {'RightArrow', 'LeftArrow'};
+
+keyIsDown = false;
+while keyIsDown == false | ismember(KbName(keyCode), key_set) == 0;
+[keyIsDown, secs, keyCode, deltaSecs] = KbCheck;
+end
+response = KbName(keyCode); % unified key name
 end
