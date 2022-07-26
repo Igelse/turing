@@ -8,6 +8,6 @@ pos2 = xpos(r(2));
 
 
 DrawFormattedText(w, 'Human', pos1, 'center', [255 255 255]);
-DrawFormattedText(w, 'Robot', pos2, 'center', [255 255 255]);
+DrawFormattedText(w, 'Artificial', pos2, 'center', [255 255 255]);
 
 end
