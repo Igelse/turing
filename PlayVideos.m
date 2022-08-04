@@ -6,7 +6,7 @@
 % Pressing arrow down pauses the video: arrow up will restart it
 
 
-function PlayVideos(filename,nScreen,rect)
+function [response_key, reaction_time] = PlayVideos(filename,nScreen,rect)
 
 moviename = filename;
 myscreen = nScreen;
@@ -85,6 +85,15 @@ while 1
         % Release texture:
         Screen('Close', tex);
     end
+
+ % check for subject response 
+   [keyIsDown, secs, keyCode]=KbCheck;
+            if (keyIsDown==1)
+                response_key = KbName(keyCode); % unified key name 
+                reaction_time = secs - t1;
+                    % Break out of display loop:
+                    break;
+                end;
 
     if (keyIsDown==1 && keyCode(up))
         % Increase playback rate by 1 unit.
