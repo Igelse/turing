@@ -115,7 +115,7 @@ for iTrial = 1:n_trials
 
     filename = fullfile(curdir,'Videos','test_video.m4v'); % example video for testing the code
 
-    PlayVideos(filename,nScreen,rect)
+    [response_key, reaction_time] = PlayVideos(filename,nScreen,rect)
     
     Screen('Flip', myscreen); % show video
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
